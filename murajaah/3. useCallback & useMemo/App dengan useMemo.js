@@ -3,9 +3,8 @@ import "./App.css";
 import Layout from "./Layout";
 
 /**
- * gunakan useCallback
- * perbedaan useMemo dan useCallback
- * useMemo mengembalikan value prop, sedangkan useCallback mengembalikan function
+ * gunakan useCallbac
+ * 
  */
 
 function App() {

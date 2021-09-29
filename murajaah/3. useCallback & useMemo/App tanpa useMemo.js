@@ -3,9 +3,8 @@ import "./App.css";
 import Layout from "./Layout";
 
 /**
- * gunakan useCallback
- * perbedaan useMemo dan useCallback
- * useMemo mengembalikan value prop, sedangkan useCallback mengembalikan function
+ * gunakan useCallbac
+ * 
  */
 
 function App() {
@@ -13,16 +12,6 @@ function App() {
   const [user, setUser] = useState({ name : "John" })
   const likeAction = () => setCount(current => current + 1)
   const memoizedLikeAction = useCallback(likeAction, []) //tambahan Callback
-
-  // tambahan Proses yang berat
-  const heavyProcess = (u) => {
-    sleep(2000)
-    return u
-  }
-
-  // const userProp = heavyProcess(user)
-
-  const userProp = useMemo (() => heavyProcess(user), [])
 
   console.log("Parent Component Rendered");
   return (
@@ -35,7 +24,7 @@ function App() {
       </button>
       <MemoizedChildComponent 
         title="hello" 
-        user = {userProp}
+        user = {user}
         action={memoizedLikeAction}/>
     </Layout>
   );
